@@ -41,7 +41,11 @@ Result:   HTTP 302 → /account/1
 ```
  
 <img width="600" alt="Login page showing SQL injection payload" src="https://github.com/user-attachments/assets/5b84c51b-7b44-49a3-b234-de20345e2a28" />
+*Login page with `' OR 1=1--` injected into the email field — password can be anything*
+ 
 <img width="600" alt="Burp HTTP History showing POST /login returning 302 redirect to /account/1" src="https://github.com/user-attachments/assets/e96f3bd4-6df5-4cbc-ac0e-5d9dfbc06689" />
+*Burp HTTP History — POST /login returns HTTP 302 redirecting to /account/1 without valid credentials*
+ 
 ---
  
 ### 2 — IDOR (High)
@@ -54,7 +58,11 @@ Result:       HTTP 200 — Alice's full balance and
 ```
  
 <img width="600" alt="Burp showing GET /account/1 returning 200 while authenticated as Bob" src="https://github.com/user-attachments/assets/160d805f-3990-4e68-b256-cbac8e33190c" />
+*Burp HTTP History — GET /account/1 returns HTTP 200 while authenticated as Bob (Account ID 2)*
+ 
 <img width="600" alt="Burp Repeater showing full account data returned for a different user" src="https://github.com/user-attachments/assets/adbd146a-62f3-4a76-9ad4-17f585c86f77" />
+*Full response showing Alice's account data — balance and transactions — returned to Bob with no access control error*
+ 
 ---
  
 ### 3 — Broken Access Control (High)
@@ -67,7 +75,11 @@ Result:       Server processed transfer from Alice's
 ```
  
 <img width="600" alt="Transfer form with fromAccountId changed to 1" src="https://github.com/user-attachments/assets/fbe24930-d11e-4e1e-9362-0130bf91d64a" />
+*Bob's transfer form — fromAccountId changed from 2 to 1, targeting Alice's account*
+ 
 <img width="600" alt="Burp showing POST /transfer processed without ownership check" src="https://github.com/user-attachments/assets/56606f06-5414-47eb-96e3-9e359960df53" />
+*Burp HTTP History — POST /transfer accepted and processed without verifying account ownership*
+ 
 ---
  
 ### 4 — Reflected XSS (Medium)
@@ -79,7 +91,11 @@ Result:   JavaScript executed in browser
 ```
  
 <img width="600" alt="XSS payload in search URL" src="https://github.com/user-attachments/assets/053fb83a-4c0d-4b22-95fe-c6293bda3bcd" />
+*XSS payload injected directly into the search query URL — no authentication required*
+ 
 <img width="600" alt="Alert popup confirming JavaScript execution and cookie exposure" src="https://github.com/user-attachments/assets/c866db59-5430-4597-ab4f-f328823200f0" />
+*JavaScript executes in the browser — alert popup confirms session cookie is accessible to the attacker*
+ 
 ---
  
 ## Key Findings
@@ -111,7 +127,7 @@ Testing followed industry standards for financial application security:
 - **OWASP Top 10 (2021)**
 - **PCI DSS v4.0 — Requirement 11.4**
 - **CVSS v3.1** for severity scoring
-Full findings documented in the [pentest report]((https://pennstateoffice365-my.sharepoint.com/:w:/g/personal/epj5179_psu_edu/IQD6mwIGJfAISrJfPs1a9I3GAeh3ufORQVinadEkf_RoJBc?e=zHGae4).
+Full findings documented in the [pentest report](SecureBank_Pentest_Report.docx).
  
 ---
  
