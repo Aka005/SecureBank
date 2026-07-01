@@ -111,7 +111,7 @@ Testing followed industry standards for financial application security:
 - **OWASP Top 10 (2021)**
 - **PCI DSS v4.0 — Requirement 11.4**
 - **CVSS v3.1** for severity scoring
-Full findings documented in the [pentest report](SecureBank_Pentest_Report.docx).
+Full findings documented in the [pentest report]((https://pennstateoffice365-my.sharepoint.com/:w:/g/personal/epj5179_psu_edu/IQD6mwIGJfAISrJfPs1a9I3GAeh3ufORQVinadEkf_RoJBc?e=zHGae4).
  
 ---
  
