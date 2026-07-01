@@ -40,7 +40,9 @@ Result:   HTTP 302 → /account/1
           Authenticated as Alice with no valid password
 ```
 ![SQLi login page](images/sqli_login.png)
-![SQLi Burp history](images/sqli_burp_history.png)
+![SQLi Burp history](<img width="848" height="407" alt="image" src="https://github.com/user-attachments/assets/092e9176-7aea-4ef8-8f82-06e697b75e2e" />)
+
+
  
 ---
  
