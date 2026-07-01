@@ -95,9 +95,9 @@ Result:
 • Funds transferred from Alice's account
 ```
 
-![Client-controlled account identifier modified before submission.](<img width="600" alt="Transfer form with fromAccountId changed to 1" src="https://github.com/user-attachments/assets/fbe24930-d11e-4e1e-9362-0130bf91d64a" />)
+<img width="600" alt="Transfer form with fromAccountId changed to 1" src="https://github.com/user-attachments/assets/fbe24930-d11e-4e1e-9362-0130bf91d64a" />
 
-**
+*Client-controlled account identifier modified before submission.*
 
 <img width="600" alt="Burp showing POST /transfer processed without ownership check" src="https://github.com/user-attachments/assets/56606f06-5414-47eb-96e3-9e359960df53" />
 
