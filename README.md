@@ -1,4 +1,3 @@
-
 # SecureBank — Web Application Penetration Test
  
 Security research project demonstrating real-world web application vulnerabilities in a custom-built intentionally vulnerable fintech banking app — tested using Burp Suite Community Edition.
@@ -7,9 +6,8 @@ Security research project demonstrating real-world web application vulnerabiliti
  
 ## Demo
  
-> https://github.com/user-attachments/assets/188d22ef-7ed1-4714-9456-320c61b91e3d
-
-
+https://github.com/user-attachments/assets/188d22ef-7ed1-4714-9456-320c61b91e3d
+ 
 ---
  
 ## What I Built
@@ -34,72 +32,54 @@ This project demonstrates both the **builder** and **breaker** mindset — I pla
 ## Attack Walkthroughs
  
 ### 1 — SQL Injection (Critical)
+ 
 ```
 Endpoint: POST /login
 Payload:  email = ' OR 1=1--
 Result:   HTTP 302 → /account/1
           Authenticated as Alice with no valid password
 ```
-
-![SQLi login page](images/sqli_login.png)
-
-<img width="563" height="322" alt="Screenshot 2026-07-01 at 7 05 52 PM" src="https://github.com/user-attachments/assets/5b84c51b-7b44-49a3-b234-de20345e2a28" />
-
-![SQLi Burp history](images/sqli_burp_history.png)
-<img width="848" height="407" alt="Screenshot 2026-07-01 at 7 03 45 PM" src="https://github.com/user-attachments/assets/e96f3bd4-6df5-4cbc-ac0e-5d9dfbc06689" />
-
  
+<img width="600" alt="Login page showing SQL injection payload" src="https://github.com/user-attachments/assets/5b84c51b-7b44-49a3-b234-de20345e2a28" />
+<img width="600" alt="Burp HTTP History showing POST /login returning 302 redirect to /account/1" src="https://github.com/user-attachments/assets/e96f3bd4-6df5-4cbc-ac0e-5d9dfbc06689" />
 ---
  
 ### 2 — IDOR (High)
+ 
 ```
 Logged in as: Bob (Account ID 2)
 Visited:      /account/1
 Result:       HTTP 200 — Alice's full balance and
               transaction history returned
 ```
-![IDOR Burp](images/idor_burp.png)
-<img width="715" height="91" alt="Screenshot 2026-07-01 at 7 10 11 PM" src="https://github.com/user-attachments/assets/160d805f-3990-4e68-b256-cbac8e33190c" /> 
-![IDOR URL bar](images/idor_url.png)
-<img width="947" height="306" alt="Screenshot 2026-07-01 at 7 11 32 PM" src="https://github.com/user-attachments/assets/adbd146a-62f3-4a76-9ad4-17f585c86f77" />
-
+ 
+<img width="600" alt="Burp showing GET /account/1 returning 200 while authenticated as Bob" src="https://github.com/user-attachments/assets/160d805f-3990-4e68-b256-cbac8e33190c" />
+<img width="600" alt="Burp Repeater showing full account data returned for a different user" src="https://github.com/user-attachments/assets/adbd146a-62f3-4a76-9ad4-17f585c86f77" />
 ---
  
 ### 3 — Broken Access Control (High)
+ 
 ```
 Logged in as: Bob (Account ID 2)
 Modified:     fromAccountId = 1 in transfer form
 Result:       Server processed transfer from Alice's
               account without authorisation check
 ```
-![Transfer form tampered](images/transfer_form.png)
-<img width="552" height="453" alt="Screenshot 2026-07-01 at 7 12 52 PM" src="https://github.com/user-attachments/assets/fbe24930-d11e-4e1e-9362-0130bf91d64a" />
-
-
-
-![Transfer Burp](images/transfer_burp.png)
-<img width="895" height="290" alt="Screenshot 2026-07-01 at 7 13 22 PM" src="https://github.com/user-attachments/assets/56606f06-5414-47eb-96e3-9e359960df53" />
-
-
  
+<img width="600" alt="Transfer form with fromAccountId changed to 1" src="https://github.com/user-attachments/assets/fbe24930-d11e-4e1e-9362-0130bf91d64a" />
+<img width="600" alt="Burp showing POST /transfer processed without ownership check" src="https://github.com/user-attachments/assets/56606f06-5414-47eb-96e3-9e359960df53" />
 ---
  
 ### 4 — Reflected XSS (Medium)
+ 
 ```
 Endpoint: GET /search?q=<script>alert(document.cookie)</script>
 Result:   JavaScript executed in browser
           Session cookie exposed via alert popup
 ```
-
-![XSS URL](images/xss_url.png)
-<img width="615" height="557" alt="Screenshot 2026-07-01 at 7 14 02 PM" src="https://github.com/user-attachments/assets/053fb83a-4c0d-4b22-95fe-c6293bda3bcd" />
-
-
-
-![XSS alert popup](images/xss_alert.png)
-
-<img width="835" height="263" alt="Screenshot 2026-07-01 at 7 15 15 PM" src="https://github.com/user-attachments/assets/c866db59-5430-4597-ab4f-f328823200f0" />
  
+<img width="600" alt="XSS payload in search URL" src="https://github.com/user-attachments/assets/053fb83a-4c0d-4b22-95fe-c6293bda3bcd" />
+<img width="600" alt="Alert popup confirming JavaScript execution and cookie exposure" src="https://github.com/user-attachments/assets/c866db59-5430-4597-ab4f-f328823200f0" />
 ---
  
 ## Key Findings
