@@ -41,10 +41,10 @@ Result:   HTTP 302 → /account/1
 ```
  
 <img width="600" alt="Login page showing SQL injection payload" src="https://github.com/user-attachments/assets/5b84c51b-7b44-49a3-b234-de20345e2a28" />
-*Login page with `' OR 1=1--` injected into the email field — password can be anything*
+* Login page with `' OR 1=1--` injected into the email field — password can be anything*
  
 <img width="600" alt="Burp HTTP History showing POST /login returning 302 redirect to /account/1" src="https://github.com/user-attachments/assets/e96f3bd4-6df5-4cbc-ac0e-5d9dfbc06689" />
-*Burp HTTP History — POST /login returns HTTP 302 redirecting to /account/1 without valid credentials*
+* Burp HTTP History — POST /login returns HTTP 302 redirecting to /account/1 without valid credentials*
  
 ---
  
