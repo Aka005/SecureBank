@@ -39,7 +39,9 @@ Payload:  email = ' OR 1=1--
 Result:   HTTP 302 → /account/1
           Authenticated as Alice with no valid password
 ```
+# Login
 <img width="563" height="322" alt="Screenshot 2026-07-01 at 7 05 52 PM" src="https://github.com/user-attachments/assets/5b84c51b-7b44-49a3-b234-de20345e2a28" />
+# SQL Burp
 <img width="848" height="407" alt="Screenshot 2026-07-01 at 7 03 45 PM" src="https://github.com/user-attachments/assets/e96f3bd4-6df5-4cbc-ac0e-5d9dfbc06689" />
 
  
