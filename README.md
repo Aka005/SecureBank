@@ -1,3 +1,4 @@
+
 # SecureBank — Web Application Penetration Test
  
 Security research project demonstrating real-world web application vulnerabilities in a custom-built intentionally vulnerable fintech banking app — tested using Burp Suite Community Edition.
@@ -59,7 +60,8 @@ Result:       HTTP 200 — Alice's full balance and
 ```
 ![IDOR Burp](images/idor_burp.png)
 ![IDOR URL bar](images/idor_url.png)
-
+<img width="835" height="263" alt="Screenshot 2026-07-01 at 7 15 15 PM" src="https://github.com/user-attachments/assets/c866db59-5430-4597-ab4f-f328823200f0" />
+<img width="552" height="453" alt="Screenshot 2026-07-01 at 7 12 52 PM" src="https://github.com/user-attachments/assets/fbe24930-d11e-4e1e-9362-0130bf91d64a" />
 
 ---
  
