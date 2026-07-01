@@ -163,9 +163,7 @@ Testing followed established industry guidance, including:
 
 A complete penetration testing report is included in:
 
-```
 [SecureBank_Pentest_Report.docx](https://pennstateoffice365-my.sharepoint.com/:w:/g/personal/epj5179_psu_edu/IQD6mwIGJfAISrJfPs1a9I3GAeh3ufORQVinadEkf_RoJBc?e=AYgtfN)
-```
 
 ---
 
