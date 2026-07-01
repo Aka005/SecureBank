@@ -39,9 +39,12 @@ Payload:  email = ' OR 1=1--
 Result:   HTTP 302 → /account/1
           Authenticated as Alice with no valid password
 ```
-# Login
+
+![SQLi login page](images/sqli_login.png)
+
 <img width="563" height="322" alt="Screenshot 2026-07-01 at 7 05 52 PM" src="https://github.com/user-attachments/assets/5b84c51b-7b44-49a3-b234-de20345e2a28" />
-# SQL Burp
+
+![SQLi Burp history](images/sqli_burp_history.png)
 <img width="848" height="407" alt="Screenshot 2026-07-01 at 7 03 45 PM" src="https://github.com/user-attachments/assets/e96f3bd4-6df5-4cbc-ac0e-5d9dfbc06689" />
 
  
@@ -68,7 +71,12 @@ Result:       Server processed transfer from Alice's
               account without authorisation check
 ```
 ![Transfer form tampered](images/transfer_form.png)
+<img width="615" height="557" alt="Screenshot 2026-07-01 at 7 14 02 PM" src="https://github.com/user-attachments/assets/053fb83a-4c0d-4b22-95fe-c6293bda3bcd" />
+
 ![Transfer Burp](images/transfer_burp.png)
+<img width="715" height="91" alt="Screenshot 2026-07-01 at 7 10 11 PM" src="https://github.com/user-attachments/assets/160d805f-3990-4e68-b256-cbac8e33190c" />
+
+
  
 ---
  
@@ -78,8 +86,12 @@ Endpoint: GET /search?q=<script>alert(document.cookie)</script>
 Result:   JavaScript executed in browser
           Session cookie exposed via alert popup
 ```
+
 ![XSS URL](images/xss_url.png)
+<img width="947" height="306" alt="Screenshot 2026-07-01 at 7 11 32 PM" src="https://github.com/user-attachments/assets/adbd146a-62f3-4a76-9ad4-17f585c86f77" />
+
 ![XSS alert popup](images/xss_alert.png)
+<img width="895" height="290" alt="Screenshot 2026-07-01 at 7 13 22 PM" src="https://github.com/user-attachments/assets/56606f06-5414-47eb-96e3-9e359960df53" />
  
 ---
  
