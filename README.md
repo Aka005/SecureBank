@@ -60,8 +60,7 @@ Result:       HTTP 200 — Alice's full balance and
 ```
 ![IDOR Burp](images/idor_burp.png)
 ![IDOR URL bar](images/idor_url.png)
-<img width="835" height="263" alt="Screenshot 2026-07-01 at 7 15 15 PM" src="https://github.com/user-attachments/assets/c866db59-5430-4597-ab4f-f328823200f0" />
-<img width="552" height="453" alt="Screenshot 2026-07-01 at 7 12 52 PM" src="https://github.com/user-attachments/assets/fbe24930-d11e-4e1e-9362-0130bf91d64a" />
+
 
 ---
  
@@ -73,10 +72,12 @@ Result:       Server processed transfer from Alice's
               account without authorisation check
 ```
 ![Transfer form tampered](images/transfer_form.png)
-<img width="615" height="557" alt="Screenshot 2026-07-01 at 7 14 02 PM" src="https://github.com/user-attachments/assets/053fb83a-4c0d-4b22-95fe-c6293bda3bcd" />
+<img width="552" height="453" alt="Screenshot 2026-07-01 at 7 12 52 PM" src="https://github.com/user-attachments/assets/fbe24930-d11e-4e1e-9362-0130bf91d64a" />
+
+
 
 ![Transfer Burp](images/transfer_burp.png)
-<img width="715" height="91" alt="Screenshot 2026-07-01 at 7 10 11 PM" src="https://github.com/user-attachments/assets/160d805f-3990-4e68-b256-cbac8e33190c" />
+
 
 
  
@@ -90,10 +91,16 @@ Result:   JavaScript executed in browser
 ```
 
 ![XSS URL](images/xss_url.png)
+<img width="715" height="91" alt="Screenshot 2026-07-01 at 7 10 11 PM" src="https://github.com/user-attachments/assets/160d805f-3990-4e68-b256-cbac8e33190c" /> 
+
+<img width="615" height="557" alt="Screenshot 2026-07-01 at 7 14 02 PM" src="https://github.com/user-attachments/assets/053fb83a-4c0d-4b22-95fe-c6293bda3bcd" />
+
 <img width="947" height="306" alt="Screenshot 2026-07-01 at 7 11 32 PM" src="https://github.com/user-attachments/assets/adbd146a-62f3-4a76-9ad4-17f585c86f77" />
 
 ![XSS alert popup](images/xss_alert.png)
 <img width="895" height="290" alt="Screenshot 2026-07-01 at 7 13 22 PM" src="https://github.com/user-attachments/assets/56606f06-5414-47eb-96e3-9e359960df53" />
+
+<img width="835" height="263" alt="Screenshot 2026-07-01 at 7 15 15 PM" src="https://github.com/user-attachments/assets/c866db59-5430-4597-ab4f-f328823200f0" />
  
 ---
  
