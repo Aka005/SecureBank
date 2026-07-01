@@ -6,8 +6,7 @@ Security research project demonstrating real-world web application vulnerabiliti
  
 ## Demo
  
-> Add your video link here
- 
+> https://github.com/user-attachments/assets/188d22ef-7ed1-4714-9456-320c61b91e3d
 
 
 ---
